@@ -29,80 +29,65 @@ Insert the images in their appropriate places.
 Publish the website in the LocalHost.
 
 # PROGRAM:
-<!DOCTYPE html>
-<html lang="en">
+azarbook.html
+
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Cover</title>
-    <style>
-        header{
-            background-color:grey;
-        } 
-        body
-        {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .book{
-            width: 500px;
-            height: 740px;
-            background-color:#241E1F;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content:space-between;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            font-family: Arial, sans-serif;
-        }
-        .book-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .author-name {
-            font-size: 13px;
-        }
-        .name{
-            color: #64CAD8;
-            font-size:70px ;
-            text-align: center;
-            font-family:Helvetica Bold,Impact, Haettenschweiler, 'Arial Narrow Bold';
-        }
-        .name1{
-            color: #64CAD8;
-            font-size: 50px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .for{
-            font-size: 30px;
-            font-family:Arial, Helvetica, sans-serif;
-        }
-        .book,.name,.name1,.for{
-            margin: 0;
-            line-height: 1;
-        }
-    </style>
+  <title>Book Cover</title>
 </head>
-<body>
-    <div class="book">
-        <div></div>
-        <div class="book-title">Bulid Data-Driven Solutions Using R</div>
-        <div class="name">DATA<br>SCIENCE</div>
-        <div class="for">-------for--------</div>
-        <div class="name1">FUNDRAISING</div>
-        <div><img src="book.jpg" width="300" height="350"></div>
-        <div class="author-name">ASHUTOSH NANDESHWAR,Phd | RODGER DEVINE, MS</div>
-        <div>  </div>
-    </div>
+<body style="margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: #fff;">
+
+<div style="width: 350px; height: 500px; background: linear-gradient(135deg, #00bcf2, #00b294); color: white; padding: 20px; position: relative; border: 5px solid #fff;">
+
+    <p style="font-size: 14px; font-weight: bold; color: yellow;">SEC Insights</p>
+    <hr>
+    <h1 style="font-size: 30px; color: #000; font-weight: bold; text-align: center; line-height: 1.4;">MY LIFE JOURNERY<br>IN SEC</h1>
+    <hr>
+    <p style="font-size: 20px; text-align: center;">My life in saveetha engineering college</p>
+    
+    <p style="font-size: 14px; text-align: center;">Top seller of 2025</p>
+
+<div style="display: flex; align-items: center;">
+        
+        <div style="position:absolute;bottom:100px;right:30px;width: 80px; height: 80px;border:5px solid grey;border-radius:25%;overflow:hidden;">
+        <img src="kalam.jpg" alt="kalam.jpg" style="width: 100%; height: 100%;"></div>
+            
+    
+        <div><p style="position:absolute;bottom:80px;right:56px;font-size: 14px; margin: 0;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;">Kalam</p>
+        <p style="position:absolute;bottom:65px;right:56px;font-size: 14px; margin: 0;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;">2025-2029</p></div>
+    
+</div>
+
+    <div style="position: absolute; bottom: 20px; left: 20px; font-size: 14px; font-weight: bold;">
+         <img src="sign.png" alt="signature" 
+       style="width:100px; height:auto; margin-bottom:-12px;">
+      <p style="margin: 0; color: red;">SPECIAL EDITION</p></div>
+    
+
+</div>
+
 </body>
 </html>
 
+views.py
+
+from django.shortcuts import render
+def book(request):
+    return render(request,'azarbook.html')
+
+urls.py
+
+from django.contrib import admin
+from django.urls import path
+from bookcover import views
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',views.bookcover),
+]
+
 # OUTPUT:
-<img width="801" height="576" alt="image" src="https://github.com/user-attachments/assets/0cd20251-11e5-479a-9240-b57952c7b558" />
+<img width="1035" height="744" alt="image" src="https://github.com/user-attachments/assets/137d50ba-b550-4022-8fab-6b4a96e33825" />
 
 # RESULT:
 The program for designing book front cover page using HTML and CSS is completed successfully.
